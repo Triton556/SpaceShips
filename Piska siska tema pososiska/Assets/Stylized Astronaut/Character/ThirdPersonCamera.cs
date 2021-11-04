@@ -24,7 +24,7 @@ public class ThirdPersonCamera : MonoBehaviour
     private void Update()
     {
         currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
+        currentY -= Input.GetAxis("Mouse Y");
 
         currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
     }
@@ -32,7 +32,7 @@ public class ThirdPersonCamera : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 dir = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
+        Quaternion rotation = Quaternion.Euler(currentY * sensitivityX, currentX * sensitivityY, 0);
         camTransform.position = lookAt.position + rotation * dir;
         camTransform.LookAt(lookAt.position);
     }
