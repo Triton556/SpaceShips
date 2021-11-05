@@ -28,19 +28,19 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("BulletEnemy"))
         {
             other.gameObject.GetComponent<Player>().GetDamage(damage);
+            ParticleSystem hitPS = Instantiate(hit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("BulletPlayer"))
         {
             other.gameObject.GetComponent<Enemy>().getDamage(10);
             print("Enemy HIIIIIIT");
+            ParticleSystem hitPS = Instantiate(hit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
-
-        ParticleSystem hitPS = Instantiate(hit, transform.position, Quaternion.identity);
-
-        Destroy(gameObject);
     }
 }
