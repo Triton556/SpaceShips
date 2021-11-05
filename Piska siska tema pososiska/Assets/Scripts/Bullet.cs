@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float damage;
+    public float damage;
     public float direction = 0;
     float speed = 3f;
     // Start is called before the first frame update
@@ -19,6 +19,9 @@ public class Bullet : MonoBehaviour
     {
         Vector3 directionVector = new Vector3(0, 0, direction);
         transform.Translate(directionVector * speed);
+        
+        if(transform.position.z > 150f)
+            Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
