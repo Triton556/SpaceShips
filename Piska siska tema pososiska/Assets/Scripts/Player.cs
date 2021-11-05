@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private float direction = 1f;
 
     private bool immortality = false;
+    private GameObject bullet;
+    
     // Start is called before the first frame update
 
     /*private void Awake()
@@ -136,7 +138,11 @@ public class Player : MonoBehaviour
 
     void Fire()
     {
-        var bullet = Instantiate(bulletPrefab, cannon.transform.position, Quaternion.identity);
+        if(localGame)
+            bullet = Instantiate(bulletPrefab, cannon.transform.position, Quaternion.identity);
+        else
+            bullet = PhotonNetwork.Instantiate(bulletPrefab.name, cannon.transform.position, Quaternion.identity);
+        
         bullet.GetComponent<Bullet>().direction = direction;
     }
 
@@ -145,7 +151,7 @@ public class Player : MonoBehaviour
         if (!immortality)
         {
             StartCoroutine(ImmortalityCorutine());
-            healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
+            //healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
             health -= 1;
             print("Hit");
         }

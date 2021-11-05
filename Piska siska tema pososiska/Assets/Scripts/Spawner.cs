@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
 
     private void spawn()
     {
-        float x = transform.position.x + Random.Range(-5f, 5f), y = transform.position.y, z = transform.position.z + Random.Range(0f, 10f);
+        float x = transform.position.x + Random.Range(-5f, 5f), y = transform.position.y, z = transform.position.z;
         if (localGame)
             enem_obj = Instantiate(Enemy, new Vector3(x, y, z), Quaternion.identity);
         else
