@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
@@ -15,19 +18,24 @@ public class Player : MonoBehaviour
     public float speed = 0.1f;
     private float maxSpeed = 0.5f;
     private float horizontalDir = 0f;
-    private int playerLevel = 0;
+    int playerLevel = 0;
     private float verticalDir = 0f;
     public int health = 5;
     public GameObject bulletPrefab;
     public GameObject healthGO;
     public Transform cannon;
     
-    public static float bulletDamage;
+    public static float bulletDamage = 10f;
     
     private float direction = 1f;
 
     private bool immortality = false;
-    private GameObject bullet;
+
+    public GameObject[] playerShips;
+
+
+
+    public Button levelUpButton;
     
     // Start is called before the first frame update
 
@@ -172,5 +180,20 @@ public class Player : MonoBehaviour
         immortality = true;
         yield return new WaitForSeconds(1f);
         immortality = false;
+    }
+
+
+
+
+    public void UpgradeShip()
+    {
+        GameController.score = 0;
+        print("Upgrade");
+        playerLevel += 1;
+        Destroy(transform.GetChild(transform.childCount-1).gameObject);
+        Instantiate(playerShips[playerLevel], transform.position, Quaternion.identity, transform);
+        
+        levelUpButton.interactable = false;
+        InvokeRepeating(nameof(Fire), 1f, 1f);
     }
 }

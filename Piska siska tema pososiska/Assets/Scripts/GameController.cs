@@ -6,16 +6,21 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static int score = 0;
     private float levelProgress = 0f;
     private int currentLevel = 1;
     private float countTime = 0.1f;
     public Image levelProgressBar;
     public Text levelText;
     private float counter = 0f;
+
+    public GameObject upgradeButton;
+
+    private Image upgradeButtonImage;
     // Start is called before the first frame update
     void Start()
     {
-        
+        upgradeButtonImage = upgradeButton.GetComponent<Image>();
     }
 
     public int GetCurrentLevel()
@@ -26,6 +31,15 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float scoreFloat = score;
+        upgradeButtonImage.fillAmount = scoreFloat / 20f;
+        
+        if (score >= 20)
+        {
+            var button = upgradeButton.GetComponent<Button>();
+            button.interactable = true;
+        }
+        
         counter += Time.deltaTime;
         if (counter >= countTime)
         {

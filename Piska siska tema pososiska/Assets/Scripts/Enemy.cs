@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour
 
     private void destroyShip()
     {
-        //GameController.score += 1;
+        GameController.score += 1;
         if(localGame)
             Destroy(gameObject);
         else if (photonView != null)
