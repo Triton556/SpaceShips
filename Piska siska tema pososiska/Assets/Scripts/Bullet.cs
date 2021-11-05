@@ -33,6 +33,11 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<Player>().GetDamage(damage);
         }
 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Enemy>().getDamage(10);
+            print("Enemy HIIIIIIT");
+        }
 
         ParticleSystem hitPS = Instantiate(hit, transform.position, Quaternion.identity);
 
