@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(ImmortalityCorutine());
             healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
-            health -= Mathf.CeilToInt(damage);
+            health -= 1;
             print("Hit");
         }
         
