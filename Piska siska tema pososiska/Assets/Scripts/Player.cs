@@ -10,9 +10,11 @@ using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    public ParticleSystem blow;
     private PhotonView _photonView;
     private bool localGame;
-    
+
     private Vector3 clickPos;
     private Camera mainCam;
     public float speed = 0.1f;
@@ -24,9 +26,9 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject healthGO;
     public Transform cannon;
-    
+
     public static float bulletDamage = 10f;
-    
+
     private float direction = 1f;
 
     private bool immortality = false;
@@ -34,9 +36,8 @@ public class Player : MonoBehaviour
     public GameObject[] playerShips;
 
 
-
     public Button levelUpButton;
-    
+
     // Start is called before the first frame update
 
     /*private void Awake()
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
             localGame = true;
         else
             localGame = false;
-        
+
         _photonView = GetComponent<PhotonView>();
         mainCam = Camera.main;
         InvokeRepeating(nameof(Fire), 1f, 0.5f);
@@ -62,7 +63,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_photonView != null)
+        if (_photonView != null)
             if (!_photonView.IsMine && !localGame)
                 return;
 
@@ -72,7 +73,6 @@ public class Player : MonoBehaviour
             clickPos = mainCam.ScreenToViewportPoint(Input.mousePosition);
             if (clickPos.x > 0.6f)
             {
-                
                 horizontalDir = clickPos.x - 0.5f;
             }
             else if (clickPos.x < 0.6f)
@@ -108,20 +108,20 @@ public class Player : MonoBehaviour
         float xMovement = horizontalDir * speed;
         float yMovement = verticalDir * speed * 2;
         //print(new Vector2(xMovement, yMovement));
-        
+
         //Movement apply
-        gameObject.transform.position += new Vector3(xMovement,0, yMovement);
+        gameObject.transform.position += new Vector3(xMovement, 0, yMovement);
 
         //Rotation calculation
         float rotoation = xMovement * 90;
-        
+
         //Rotation apply
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -rotoation));
-        
+
         Vector3 playerPos = gameObject.transform.position;
-        
+
         //Borders
-        
+
         //horizontal
         if (gameObject.transform.position.x > 22)
         {
@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(-22, 0, playerPos.z);
         }
+
         //vertical
         if (gameObject.transform.position.z > 49)
         {
@@ -140,19 +141,22 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(playerPos.x, 0, -49);
         }
-        
-        
+
+        if (health <= 0)
+        {
+            Dead();
+        }
     }
 
     void Fire()
     {
         GameObject bullet = this.gameObject;
         
-        if(localGame)
+        if (localGame)
             bullet = Instantiate(bulletPrefab, cannon.transform.position, Quaternion.identity);
         else
             bullet = PhotonNetwork.Instantiate(bulletPrefab.name, cannon.transform.position, Quaternion.identity);
-        
+
         bullet.GetComponent<Bullet>().direction = direction;
     }
 
@@ -165,7 +169,6 @@ public class Player : MonoBehaviour
             health -= 1;
             print("Hit");
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -185,17 +188,31 @@ public class Player : MonoBehaviour
     }
 
 
-
-
     public void UpgradeShip()
     {
-        GameController.score = 0;
-        print("Upgrade");
-        playerLevel += 1;
-        Destroy(transform.GetChild(transform.childCount-1).gameObject);
-        Instantiate(playerShips[playerLevel], transform.position, Quaternion.identity, transform);
+        if (playerLevel <= 3)
+        {
+            GameController.score = 0;
+            print("Upgrade");
+            playerLevel += 1;
+            Destroy(transform.GetChild(transform.childCount - 1).gameObject);
+            Instantiate(playerShips[playerLevel], transform.position, Quaternion.identity, transform);
+
+            levelUpButton.interactable = false;
+            if (playerLevel >= 3)
+            {
+                levelUpButton.gameObject.SetActive(false);
+            }
+            InvokeRepeating(nameof(Fire), 1f, 1f);
+        }
         
-        levelUpButton.interactable = false;
-        InvokeRepeating(nameof(Fire), 1f, 1f);
+    }
+
+    void Dead()
+    {
+        Instantiate(blow, transform.position, Quaternion.identity);
+        gameOverScreen.SetActive(true);
+        Destroy(gameObject);
+        
     }
 }
