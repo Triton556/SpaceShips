@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
@@ -18,8 +22,18 @@ public class Enemy : MonoBehaviour
     private Random rnd;
     private int chanceSpawnEnemy;
     private TypeEnemy randomTypeEnemy;
+    private PhotonView photonView;
+
+    private bool localGame;
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name.Contains("Local"))
+            localGame = true;
+        else
+            localGame = false;
+
+        photonView = GetComponent<PhotonView>();
+        
         spawn();
     }
 
@@ -29,19 +43,19 @@ public class Enemy : MonoBehaviour
 
         if (chanceSpawnEnemy > 85)
         {
-            initializeParametrsEnemy(5f, 3f);
+            initializeParametrsEnemy(10f, 3f);
             spawnModelShip(BigEnemy, 2);
             randomTypeEnemy = TypeEnemy.BIG;
         }
         else if (chanceSpawnEnemy > 55 && chanceSpawnEnemy <= 85)
         {
-            initializeParametrsEnemy(7f, 1.5f);
+            initializeParametrsEnemy(15f, 1.5f);
             spawnModelShip(MediumEnemy, 3);
             randomTypeEnemy = TypeEnemy.MEDIUM;
         }
         else if(chanceSpawnEnemy <= 55)
         {
-            initializeParametrsEnemy(14f, 0.5f);
+            initializeParametrsEnemy(25f, 0.5f);
             spawnModelShip(LittleEnemy, 3);
             randomTypeEnemy = TypeEnemy.LITTLE;
         }
@@ -58,7 +72,7 @@ public class Enemy : MonoBehaviour
         model = Instantiate(model, this.transform);
         model.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
         
-        InvokeRepeating(nameof(fire), 0.1f, 2f);
+        InvokeRepeating(nameof(fire), 0.1f, 3f);
         //model.transform.position = new Vector3(0f, 0f, 0f);
     }
 
@@ -93,7 +107,14 @@ public class Enemy : MonoBehaviour
 
     private void destroyShip()
     {
-        Destroy(gameObject);
+        //GameController.score += 1;
+        if(localGame)
+            Destroy(gameObject);
+        else if (photonView != null)
+        {
+            if (photonView.IsMine)
+                PhotonNetwork.Destroy(gameObject);
+        }
     }
 }
 

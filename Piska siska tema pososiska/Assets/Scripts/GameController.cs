@@ -18,6 +18,11 @@ public class GameController : MonoBehaviour
         
     }
 
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+    
     // Update is called once per frame
     void Update()
     {
