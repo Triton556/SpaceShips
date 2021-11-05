@@ -1,9 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    private PhotonView _photonView;
+    private bool localGame;
+    
     private Vector3 clickPos;
     private Camera mainCam;
     public float speed = 0.1f;
@@ -20,8 +26,23 @@ public class Player : MonoBehaviour
     
     private float direction = 1f;
     // Start is called before the first frame update
+
+    /*private void Awake()
+    {
+        if (SceneManager.GetActiveScene().name.Contains("Local"))
+            localGame = true;
+        else
+            localGame = false;
+    }*/
+
     void Start()
     {
+        if (SceneManager.GetActiveScene().name.Contains("Local"))
+            localGame = true;
+        else
+            localGame = false;
+        
+        _photonView = GetComponent<PhotonView>();
         mainCam = Camera.main;
         InvokeRepeating(nameof(Fire), 1f, 0.5f);
     }
@@ -29,7 +50,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(_photonView != null)
+            if (!_photonView.IsMine && !localGame)
+                return;
+
         //Movement Input
         if (Input.GetMouseButton(0))
         {
@@ -87,22 +111,22 @@ public class Player : MonoBehaviour
         //Borders
         
         //horizontal
-        if (gameObject.transform.position.x > 23)
+        if (gameObject.transform.position.x > 22)
         {
-            gameObject.transform.position = new Vector3(23, 0, playerPos.z);
+            gameObject.transform.position = new Vector3(22, 0, playerPos.z);
         }
-        else if (gameObject.transform.position.x < -23)
+        else if (gameObject.transform.position.x < -22)
         {
-            gameObject.transform.position = new Vector3(-23, 0, playerPos.z);
+            gameObject.transform.position = new Vector3(-22, 0, playerPos.z);
         }
         //vertical
-        if (gameObject.transform.position.z > 50)
+        if (gameObject.transform.position.z > 49)
         {
-            gameObject.transform.position = new Vector3(playerPos.x, 0, 50);
+            gameObject.transform.position = new Vector3(playerPos.x, 0, 49);
         }
-        else if (gameObject.transform.position.z < -50)
+        else if (gameObject.transform.position.z < -49)
         {
-            gameObject.transform.position = new Vector3(playerPos.x, 0, -50);
+            gameObject.transform.position = new Vector3(playerPos.x, 0, -49);
         }
         
         

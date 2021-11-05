@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     public GameObject Gun;
     
     private float speed;
-    private float damage;
     private float health;
     
     private Random rnd;
@@ -30,29 +29,26 @@ public class Enemy : MonoBehaviour
 
         if (chanceSpawnEnemy > 85)
         {
-            initializeParametrsEnemy(0.5f, 3f, 4f);
+            initializeParametrsEnemy(5f, 3f);
             spawnModelShip(BigEnemy, 2);
             randomTypeEnemy = TypeEnemy.BIG;
         }
         else if (chanceSpawnEnemy > 55 && chanceSpawnEnemy <= 85)
         {
-            initializeParametrsEnemy(0.7f, 1.5f, 2f);
+            initializeParametrsEnemy(7f, 1.5f);
             spawnModelShip(MediumEnemy, 3);
             randomTypeEnemy = TypeEnemy.MEDIUM;
         }
         else if(chanceSpawnEnemy <= 55)
         {
-            initializeParametrsEnemy(1f, 0.5f, 1f);
+            initializeParametrsEnemy(14f, 0.5f);
             spawnModelShip(LittleEnemy, 3);
             randomTypeEnemy = TypeEnemy.LITTLE;
         }
-        
-        Debug.Log(randomTypeEnemy);
     }
-    private void initializeParametrsEnemy(float _speed, float _damage, float _health)
+    private void initializeParametrsEnemy(float _speed, float _health)
     {
         speed = _speed;
-        damage = _damage;
         health = _health;
     }
 
@@ -60,12 +56,15 @@ public class Enemy : MonoBehaviour
     {
         GameObject model = ship[Random.Range(0, countType)];
         model = Instantiate(model, this.transform);
-        model.transform.position = new Vector3(0f, 0f, 0f);
+        model.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        
+        InvokeRepeating(nameof(fire), 0.1f, 2f);
+        //model.transform.position = new Vector3(0f, 0f, 0f);
     }
 
-    void Update()
+    private void Update()
     {
-        //move();
+        move();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -78,15 +77,15 @@ public class Enemy : MonoBehaviour
         transform.position -= new Vector3(0f, 0f, speed * Time.deltaTime);
     }
 
-    private void fire(float dir=-1f)
+    private void fire()
     {
         GameObject b = Instantiate(Bullet, Gun.transform.position, Quaternion.identity);
-        //b.GetComponent<Bullet>().direction = dir;
+        b.GetComponent<Bullet>().direction = -1f;
     }
 
     private void getDamage(float _damage)
     {
-        health -= damage;
+        health -= _damage;
         if (health <= 0)
             destroyShip();
     }

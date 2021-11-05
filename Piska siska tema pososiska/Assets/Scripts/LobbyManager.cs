@@ -55,14 +55,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             Log("The player is found");
             //Загрузка сцены
-            PhotonNetwork.LoadLevel("Game");
+            PhotonNetwork.LoadLevel("CooperativeGame");
         }
     }
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
         Log("The player is found");
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("CooperativeGame");
     }
 
     private void Log(string message, bool log=false)

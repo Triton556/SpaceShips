@@ -3,26 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="0f0a7b1c-9b6a-4c49-a745-d1c4d033d607" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Piska siska tema pososiska/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Piska siska tema pososiska/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Materials/Nebula Aqua-Pink.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Materials/Nebula Aqua-Pink.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Aqua-Pink.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Aqua-Pink.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Cyan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Cyan.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Blue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Grey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Grey.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Textures/StarSparrow_Emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Textures/StarSparrow_Emission.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Stars Small_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Stars Small_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Earth Free/Materials/Earth1kMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Earth Free/Materials/Earth1kMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/UpgradeHDRP/HDRP_2019.4+.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/UpgradeHDRP/HDRP_2020.2+.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/UpgradeURP/URP_Materials.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +31,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MoveEarth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/2019.4.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI pack/Scripts/FillValueNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameManagerPhoton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/ThirdPersonCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BGEndless.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MoveEarth.cs" />
+      <option value="$PROJECT_DIR$/Assets/GameManagerPhoton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="20S0HF8BriCZKGSYbHTuU97AryC" />
@@ -49,12 +58,24 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive - ДВФУ/Рабочий стол/Test\Piska siska tema pososiska.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\USER\OneDrive - ДВФУ\Рабочий стол\Test" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -65,10 +86,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17928">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="17928" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -86,8 +107,12 @@
       <updated>1636022595534</updated>
       <workItem from="1636022599817" duration="1125000" />
       <workItem from="1636051112770" duration="9364000" />
+      <workItem from="1636071613831" duration="10228000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -105,5 +130,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MoveEarth.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\Games\Projects\SpaceShips\Piska siska tema pososiska\Assets\Scripts\MoveEarth.cs" initialLine="29" containingFunctionPresentation="method 'Spawn'">
+            <startOffsets>
+              <option value="705" />
+            </startOffsets>
+            <endOffsets>
+              <option value="722" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
