@@ -21,7 +21,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        upgradeButtonImage = upgradeButton.GetComponent<Image>();
+        if(SceneManager.GetActiveScene().name.Contains("Local"))
+            upgradeButtonImage = upgradeButton.GetComponent<Image>();
     }
 
     public int GetCurrentLevel()
@@ -32,15 +33,18 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float scoreFloat = score;
-        upgradeButtonImage.fillAmount = scoreFloat / 20f;
-        
-        if (score >= 20)
+        if (SceneManager.GetActiveScene().name.Contains("Local"))
         {
-            var button = upgradeButton.GetComponent<Button>();
-            button.interactable = true;
+            float scoreFloat = score;
+            upgradeButtonImage.fillAmount = scoreFloat / 20f;
+
+            if (score >= 20)
+            {
+                var button = upgradeButton.GetComponent<Button>();
+                button.interactable = true;
+            }
         }
-        
+
         counter += Time.deltaTime;
         if (counter >= countTime)
         {

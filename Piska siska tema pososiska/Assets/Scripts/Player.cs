@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
     public float speed = 0.1f;
     private float maxSpeed = 0.5f;
     private float horizontalDir = 0f;
-    int playerLevel = 0;
+    private int playerLevel = 0;
     private float verticalDir = 0f;
     public int health = 5;
     public GameObject bulletPrefab;
@@ -38,22 +40,13 @@ public class Player : MonoBehaviour
 
     public Button levelUpButton;
 
-    // Start is called before the first frame update
-
-    /*private void Awake()
-    {
-        if (SceneManager.GetActiveScene().name.Contains("Local"))
-            localGame = true;
-        else
-            localGame = false;
-    }*/
-
     void Start()
     {
         if (SceneManager.GetActiveScene().name.Contains("Local"))
             localGame = true;
         else
             localGame = false;
+
 
         _photonView = GetComponent<PhotonView>();
         mainCam = Camera.main;
@@ -165,7 +158,8 @@ public class Player : MonoBehaviour
         if (!immortality)
         {
             StartCoroutine(ImmortalityCorutine());
-            healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
+            if(localGame)
+                healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
             health -= 1;
             print("Hit");
         }
@@ -195,6 +189,7 @@ public class Player : MonoBehaviour
             GameController.score = 0;
             print("Upgrade");
             playerLevel += 1;
+
             Destroy(transform.GetChild(transform.childCount - 1).gameObject);
             Instantiate(playerShips[playerLevel], transform.position, Quaternion.identity, transform);
 
@@ -210,9 +205,22 @@ public class Player : MonoBehaviour
 
     void Dead()
     {
-        Instantiate(blow, transform.position, Quaternion.identity);
-        gameOverScreen.SetActive(true);
-        Destroy(gameObject);
-        
+        //Instantiate(blow, transform.position, Quaternion.identity);
+        //gameOverScreen.SetActive(true);
+        if (localGame)
+        {
+            Instantiate(blow, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            gameOverScreen.SetActive(true);
+        }
+        else if (_photonView != null)
+        {
+            if (_photonView.IsMine)
+            {
+                PhotonNetwork.Instantiate(blow.name, transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.LoadLevel("Menu");
+            }
+        }
     }
 }
