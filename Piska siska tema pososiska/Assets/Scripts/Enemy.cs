@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
     public void getDamage(float _damage)
     {
         health -= _damage;
+        print("Got HIT");
         if (health <= 0)
             destroyShip();
     }
