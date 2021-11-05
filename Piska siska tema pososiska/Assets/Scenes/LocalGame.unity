@@ -247,8 +247,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 311992551}
-  - {fileID: 542088904}
   - {fileID: 1924160149}
+  - {fileID: 542088904}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,6 +270,12 @@ MonoBehaviour:
     type: 3}
   healthGO: {fileID: 805296444}
   cannon: {fileID: 1924160149}
+  playerShips:
+  - {fileID: 1227962952135790, guid: 137404c3ccadbc94c8eafe555ab8aaee, type: 3}
+  - {fileID: 1105741334745168, guid: dc92f6c59177d3b48834d869261d80b1, type: 3}
+  - {fileID: 1093813972544782, guid: 4a40092bbc207004fa51b938b96005eb, type: 3}
+  - {fileID: 1820494407919854, guid: 0478b1e28fd9831458b0f051b9d2ad8b, type: 3}
+  levelUpButton: {fileID: 625149671}
 --- !u!54 &110712309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1067,11 +1073,22 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 625149672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 110712308}
+        m_MethodName: UpgradeShip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &625149672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,7 +1407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4136763724114856, guid: 137404c3ccadbc94c8eafe555ab8aaee, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4136763724114856, guid: 137404c3ccadbc94c8eafe555ab8aaee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1910,7 +1927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1918,10 +1935,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1929,7 +1946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: UPGRADE
 --- !u!222 &1348795037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2111,7 +2128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 110712307}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006246828
 GameObject:
@@ -2306,6 +2323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelProgressBar: {fileID: 124405556}
   levelText: {fileID: 584687052}
+  upgradeButton: {fileID: 625149669}
 --- !u!4 &2147245245
 Transform:
   m_ObjectHideFlags: 0
@@ -2314,7 +2332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147245243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.452926, y: -27.864063, z: 15.736663}
+  m_LocalPosition: {x: 75.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
