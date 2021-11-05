@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject model = ship[Random.Range(0, countType)];
         model = Instantiate(model, this.transform);
-        model.transform.position = new Vector3(0f, 0f, 0f);
+        //model.transform.position = new Vector3(0f, 0f, 0f);
     }
 
     void Update()
@@ -78,13 +78,13 @@ public class Enemy : MonoBehaviour
         transform.position -= new Vector3(0f, 0f, speed * Time.deltaTime);
     }
 
-    private void fire(float dir=-1f)
+    private void fire()
     {
         GameObject b = Instantiate(Bullet, Gun.transform.position, Quaternion.identity);
-        //b.GetComponent<Bullet>().direction = dir;
+        b.GetComponent<Bullet>().direction = -1;
     }
 
-    private void getDamage(float _damage)
+    public void getDamage(float _damage)
     {
         health -= damage;
         if (health <= 0)
