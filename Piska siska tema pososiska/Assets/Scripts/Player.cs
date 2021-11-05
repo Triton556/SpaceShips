@@ -221,11 +221,31 @@ public class Player : MonoBehaviour
 
     void Dead()
     {
+
+        //Instantiate(blow, transform.position, Quaternion.identity);
+        //gameOverScreen.SetActive(true);
+        if (localGame)
+        {
+            Instantiate(blow, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            gameOverScreen.SetActive(true);
+        }
+        else if (_photonView != null)
+        {
+            if (_photonView.IsMine)
+            {
+                PhotonNetwork.Instantiate(blow.name, transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.LoadLevel("Menu");
+            }
+        }
+=======
         Instantiate(blow, transform.position, Quaternion.identity);
         gameOverScreen.SetActive(true);
         gameOverScreen.GetComponent<AudioSource>().PlayOneShot(dead);
         Destroy(gameObject);
         
         
+>>>>>>> 1a51e117006d8e8baf8501d65c9d5f2b168f20a8
     }
 }
