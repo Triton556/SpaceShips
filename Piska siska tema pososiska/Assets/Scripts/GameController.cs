@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
         if (counter >= countTime)
         {
             levelProgress += countTime;
-            levelProgressBar.fillAmount = levelProgress / 10;
+            levelProgressBar.fillAmount = levelProgress / 50;
             counter = 0f;
         }
 
