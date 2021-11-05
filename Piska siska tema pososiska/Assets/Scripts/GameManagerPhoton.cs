@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerPhoton : MonoBehaviour
 {
@@ -10,10 +11,5 @@ public class GameManagerPhoton : MonoBehaviour
     {
         Vector3 pos = new Vector3(Random.Range(-20f, 20f), 0f, -25f);
         PhotonNetwork.Instantiate(PlayerPrefab.name, pos, Quaternion.identity);
-    }
-    
-    void Update()
-    {
-        
     }
 }
