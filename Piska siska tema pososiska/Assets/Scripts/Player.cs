@@ -10,6 +10,8 @@ using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
+    public AudioClip piu;
+    public AudioClip dead;
     public GameObject gameOverScreen;
     public ParticleSystem blow;
     private PhotonView _photonView;
@@ -158,6 +160,8 @@ public class Player : MonoBehaviour
             bullet = PhotonNetwork.Instantiate(bulletPrefab.name, cannon.transform.position, Quaternion.identity);
 
         bullet.GetComponent<Bullet>().direction = direction;
+        
+        GetComponent<AudioSource>().PlayOneShot(piu);
     }
 
     public void GetDamage(float damage)
@@ -192,6 +196,13 @@ public class Player : MonoBehaviour
     {
         if (playerLevel <= 3)
         {
+            health = 5;
+
+            for (int i = 0; i < healthGO.transform.childCount; i++)
+            {
+                healthGO.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            
             GameController.score = 0;
             print("Upgrade");
             playerLevel += 1;
@@ -212,7 +223,9 @@ public class Player : MonoBehaviour
     {
         Instantiate(blow, transform.position, Quaternion.identity);
         gameOverScreen.SetActive(true);
+        gameOverScreen.GetComponent<AudioSource>().PlayOneShot(dead);
         Destroy(gameObject);
+        
         
     }
 }
