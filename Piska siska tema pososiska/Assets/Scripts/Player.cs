@@ -10,6 +10,8 @@ using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    public ParticleSystem blow;
     private PhotonView _photonView;
     private bool localGame;
 
@@ -139,6 +141,11 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(playerPos.x, 0, -49);
         }
+
+        if (health <= 0)
+        {
+            Dead();
+        }
     }
 
     void Fire()
@@ -198,6 +205,14 @@ public class Player : MonoBehaviour
             }
             InvokeRepeating(nameof(Fire), 1f, 1f);
         }
+        
+    }
+
+    void Dead()
+    {
+        Instantiate(blow, transform.position, Quaternion.identity);
+        gameOverScreen.SetActive(true);
+        Destroy(gameObject);
         
     }
 }
