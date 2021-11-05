@@ -87,7 +87,7 @@ MonoBehaviour:
   BigEnemy:
   - {fileID: 1967302699866656585, guid: feb130a8adcebe54aa314f58f408c412, type: 3}
   - {fileID: 1917106948373238, guid: c79905ec17c169a49b75177b6cf0d524, type: 3}
-  Bullet: {fileID: 8406127740025906259, guid: abf0d1c16e7a3bf4bbbd0250defc35b8, type: 3}
+  Bullet: {fileID: 3031909337160706388, guid: 60e83f3e3ff85ee428879ac4d8732a15, type: 3}
   Gun: {fileID: 8631326214486610669}
 --- !u!65 &1851798184028021428
 BoxCollider:

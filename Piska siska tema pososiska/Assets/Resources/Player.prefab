@@ -82,10 +82,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   health: 5
-  bulletPrefab: {fileID: 8406127740025906259, guid: abf0d1c16e7a3bf4bbbd0250defc35b8,
+  bulletPrefab: {fileID: 3652930982634093439, guid: 77fc14acffc3bc7408b0b4ac5b5b57e6,
     type: 3}
   healthGO: {fileID: 0}
   cannon: {fileID: 998688404841091341}
+  playerShips: []
+  levelUpButton: {fileID: 0}
 --- !u!54 &998688406252019309
 Rigidbody:
   m_ObjectHideFlags: 0
