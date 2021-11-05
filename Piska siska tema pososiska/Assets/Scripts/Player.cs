@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +12,16 @@ public class Player : MonoBehaviour
     private float horizontalDir = 0f;
     private int playerLevel = 0;
     private float verticalDir = 0f;
-    public float health = 5f;
+    public int health = 5;
     public GameObject bulletPrefab;
-
+    public GameObject healthGO;
     public Transform cannon;
-
+    
     public static float bulletDamage;
     
     private float direction = 1f;
+
+    private bool immortality = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -116,7 +119,29 @@ public class Player : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        health -= damage;
-        print("Hit");
+        if (!immortality)
+        {
+            StartCoroutine(ImmortalityCorutine());
+            healthGO.transform.GetChild((health - 1)).gameObject.SetActive(false);
+            health -= Mathf.CeilToInt(damage);
+            print("Hit");
+        }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            GetDamage(1f);
+            other.GetComponent<Enemy>().getDamage(1f);
+        }
+    }
+
+    IEnumerator ImmortalityCorutine()
+    {
+        immortality = true;
+        yield return new WaitForSeconds(1f);
+        immortality = false;
     }
 }

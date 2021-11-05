@@ -3,25 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f0a7b1c-9b6a-4c49-a745-d1c4d033d607" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Piska siska tema pososiska/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Piska siska tema pososiska/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Aqua-Pink.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Aqua-Pink.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Cyan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Cyan.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Blue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Grey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Grey.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/StarSparrow_White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Textures/StarSparrow_Emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Textures/StarSparrow_Emission.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Hit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Hit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,12 +22,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/UI pack/Scripts/FillValueNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Stylized Astronaut/Character/ThirdPersonCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="20S0HF8BriCZKGSYbHTuU97AryC" />
@@ -85,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636022595534</updated>
       <workItem from="1636022599817" duration="1125000" />
-      <workItem from="1636051112770" duration="9364000" />
+      <workItem from="1636051112770" duration="16642000" />
     </task>
     <servers />
   </component>
