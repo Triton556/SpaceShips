@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
         b.GetComponent<Bullet>().direction = -1f;
     }
 
-    private void getDamage(float _damage)
+    public void getDamage(float _damage)
     {
         health -= _damage;
         if (health <= 0)
