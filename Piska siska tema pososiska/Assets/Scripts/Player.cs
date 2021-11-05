@@ -222,16 +222,14 @@ public class Player : MonoBehaviour
         {
             Instantiate(blow, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            gameOverScreen.GetComponent<AudioSource>().PlayOneShot(dead);
             gameOverScreen.SetActive(true);
         }
-        else if (_photonView != null)
+        else
         {
-            if (_photonView.IsMine)
-            {
-                PhotonNetwork.Instantiate(blow.name, transform.position, Quaternion.identity);
-                PhotonNetwork.Destroy(gameObject);
-                PhotonNetwork.LoadLevel("Menu");
-            }
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.Disconnect(); 
+            SceneManager.LoadScene(0);
         }
         
     }

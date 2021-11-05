@@ -19,6 +19,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
+        
+        PhotonNetwork.Disconnect();
     }
 
     public void ClickCooperativeButton()

@@ -15,8 +15,6 @@ public class Menu : MonoBehaviour
 
     public void LocalStartGame()
     {
-       
         SceneManager.LoadScene("LocalGame");
-        
     }
 }
