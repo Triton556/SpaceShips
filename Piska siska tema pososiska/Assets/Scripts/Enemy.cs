@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
 
     private void destroyShip()
     {
+        GameController.score += 1;
         Destroy(gameObject);
     }
 }
