@@ -229,6 +229,8 @@ public class Player : MonoBehaviour
             Instantiate(blow, transform.position, Quaternion.identity);
             Destroy(gameObject);
             gameOverScreen.SetActive(true);
+            gameOverScreen.GetComponent<AudioSource>().PlayOneShot(dead);
+            Destroy(gameObject);
         }
         else if (_photonView != null)
         {
@@ -239,13 +241,5 @@ public class Player : MonoBehaviour
                 PhotonNetwork.LoadLevel("Menu");
             }
         }
-=======
-        Instantiate(blow, transform.position, Quaternion.identity);
-        gameOverScreen.SetActive(true);
-        gameOverScreen.GetComponent<AudioSource>().PlayOneShot(dead);
-        Destroy(gameObject);
-        
-        
->>>>>>> 1a51e117006d8e8baf8501d65c9d5f2b168f20a8
     }
 }
