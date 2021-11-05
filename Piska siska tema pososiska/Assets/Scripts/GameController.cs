@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
 
     public void GoToMenu()
     {
+        Destroy(GameObject.FindWithTag("SoundManager").gameObject);
         SceneManager.LoadScene("Menu");
     }
 }
