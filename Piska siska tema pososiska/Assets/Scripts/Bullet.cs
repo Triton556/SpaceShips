@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float damage;
     public float direction = 0;
     float speed = 3f;
+
+    public ParticleSystem hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +32,10 @@ public class Bullet : MonoBehaviour
         {
             other.gameObject.GetComponent<Player>().GetDamage(damage);
         }
+
+
+        ParticleSystem hitPS = Instantiate(hit, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }
